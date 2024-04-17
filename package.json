@@ -1,16 +1,16 @@
 {
-  "name": "vite-typescript-npm-package",
-  "version": "1.0.0",
-  "description": "Vite TypeScript library npm package template",
-  "author": "Jason Sturges <jason@jsonsturges.com> (https://jasonsturges.com)",
-  "homepage": "https://github.com/jasonsturges/vite-typescript-npm-package",
-  "repository": "github:jasonsturges/vite-typescript-npm-package",
-  "license": "ISC",
+  "name": "supabase-comments",
+  "version": "0.0.1",
+  "description": "A React library for integrating Supabase powered comments into your applications",
+  "author": "Matthew Wong <matt@devtodollars.com>",
+  "homepage": "https://github.com/devtodollars/supabase-comments",
+  "repository": "github:devtodollars/supabase-comments",
+  "license": "MIT",
   "keywords": [
-    "vite",
-    "typescript",
-    "npm",
-    "package"
+    "react",
+    "supabase",
+    "comments",
+    "component"
   ],
   "main": "dist/index.cjs.js",
   "module": "dist/index.es.js",
@@ -29,9 +29,10 @@
     "format:scripts": "prettier ./src --write",
     "format:styles": "stylelint ./**/*.{css,scss} --fix"
   },
-  "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+  "peerDependencies": {
+    "react": "^17.0.0 || ^18.0.0",
+    "react-dom": "^17.0.0 || ^18.0.0",
+    "@supabase/supabase-js": "^2.0.0"
   },
   "devDependencies": {
     "@types/node": "^20.11.24",
