@@ -14,7 +14,8 @@ export interface CommentsProviderProps {
   mode?: "light" | "dark";
   children: ReactNode;
 }
-export const CommentsProvider: FC<CommentsProviderProps> = ({
+
+const CommentsProvider: FC<CommentsProviderProps> = ({
   supabaseClient,
   queryClient = defaultQueryClient,
   children,
@@ -41,3 +42,5 @@ export const CommentsProvider: FC<CommentsProviderProps> = ({
     </QueryClientProvider>
   );
 };
+
+export default CommentsProvider;

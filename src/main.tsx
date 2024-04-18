@@ -1,6 +1,7 @@
 import { createClient } from "@supabase/supabase-js";
-import { Comments } from "./components/Comments";
-import { CommentsProvider } from "./components/CommentsProvider";
+import Comments from "./components/Comments";
+import CommentsProvider from "./components/CommentsProvider";
+import ReplyEditor from "./components/ReplyEditor";
 import React from "react";
 import ReactDOM from "react-dom/client";
 
@@ -13,7 +14,8 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     Use this to run a local development environment of the library for testing
     <CommentsProvider supabaseClient={supabase}>
-      <Comments topic="Single Topic" />
+      <ReplyEditor topic="Single Topic" parentId={null} />
+      <Comments topic="Single Topic" parentId={null} />
     </CommentsProvider>
   </React.StrictMode>,
 );

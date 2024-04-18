@@ -18,7 +18,6 @@ export const Comments: React.FC<{ topic: string; parentId: string | null }> = ({
         backgroundColor: mode === "dark" ? "#333" : "#eee",
       }}
     >
-      <ReplyEditor parentId={parentId} topic={topic} />
       {commentsQuery.isLoading && <p>Loading...</p>}
       {commentsQuery.data &&
         commentsQuery.data.map((comment) => (
@@ -27,3 +26,5 @@ export const Comments: React.FC<{ topic: string; parentId: string | null }> = ({
     </div>
   );
 };
+
+export default Comments;
