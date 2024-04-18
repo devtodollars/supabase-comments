@@ -51,7 +51,7 @@ INSERT INTO auth.users (
     NULL,
     NULL,
     '{"provider": "email", "providers": ["email"]}',
-    '{}',
+    '{"name": "Test Name"}',
     NULL,
     '2023-12-15 00:09:04.563458+00',
     '2023-12-15 00:09:04.571233+00',

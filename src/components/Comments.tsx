@@ -1,10 +1,11 @@
 import React from "react";
 import { useCommentsContext } from "../contexts";
-import { useComments } from "../hooks/useComments";
+import Comment from "./Comment";
+import useComments from "../hooks/useComments";
 
-export const Comments: React.FC<{ topic: string }> = ({ topic }) => {
+export const Comments: React.FC<{ topic: string, parentId: string | null }> = ({ topic, parentId = null }) => {
   const { mode } = useCommentsContext();
-  const commentsQuery = useComments({ topic, parentId: null });
+  const commentsQuery = useComments({ topic, parentId });
 
   return (
     <div
@@ -13,13 +14,10 @@ export const Comments: React.FC<{ topic: string }> = ({ topic }) => {
         backgroundColor: mode === "dark" ? "#333" : "#eee",
       }}
     >
-      {commentsQuery.isLoading && <p>Loading!</p>}
+      {commentsQuery.isLoading && <p>Loading...</p>}
       {commentsQuery.data &&
         commentsQuery.data.map((comment) => (
-          <div key={comment.id}>
-            <h4>{comment.user_id}</h4>
-            <p>{comment.comment}</p>
-          </div>
+          <Comment key={comment.id} id={comment.id} />
         ))}
     </div>
   );

@@ -1,4 +1,4 @@
-import { FC, ReactNode, useMemo } from "react";
+import { FC, ReactNode, useEffect, useMemo } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { DisplayUser } from "../types";
 import { CommentsContext, SupabaseClientContext } from "../contexts";

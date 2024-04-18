@@ -1,4 +1,4 @@
-import useApi from './useApi';
+import useApi from "./useApi";
 import { useQuery } from "@tanstack/react-query";
 
 interface UseCommentQuery {
