@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import useAddComment from "@/hooks/useAddComment";
@@ -44,32 +43,14 @@ const ReplyEditor: React.FC<ReplyEditorProps> = ({
 
   return (
     <div className="flex flex-col">
-      <div className="flex items-center">
-        <Avatar>
-          <AvatarImage src="https://github.com/shadcn.png" alt="User avatar" />
-          <AvatarFallback>CN</AvatarFallback>
-        </Avatar>
-      </div>
       <Textarea
         className="flex-1 mt-2"
         value={replyText}
         onChange={handleReplyChange}
         placeholder="Write a comment..."
       />
-      <div className="flex justify-between items-center mt-2">
-        {user && (
-          <Button variant="link" onClick={handleLogout} className="ml-1">
-            Logout
-          </Button>
-        )}
-        <div className="flex items-center">
-          {onClose && (
-            <Button className="mr-2" onClick={onClose}>
-              Cancel
-            </Button>
-          )}
-          <Button onClick={submitReply}>Comment</Button>
-        </div>
+      <div className="flex items-center justify-end mt-2">
+        <Button onClick={submitReply}>Comment</Button>
       </div>
     </div>
   );

@@ -14,8 +14,12 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     Use this to run a local development environment of the library for testing
     <CommentsProvider supabaseClient={supabase}>
-      <ReplyEditor topic="Single Topic" parentId={null} />
-      <Comments topic="Single Topic" parentId={null} />
+      <div className="flex flex-col items-center justify-center min-h-screen">
+        <div className="w-full max-w-2xl">
+          <ReplyEditor topic="Single Topic" parentId={null} />
+          <Comments topic="Single Topic" parentId={null} />
+        </div>
+      </div>
     </CommentsProvider>
   </React.StrictMode>,
 );

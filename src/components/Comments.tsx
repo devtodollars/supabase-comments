@@ -11,16 +11,13 @@ export const Comments: React.FC<{ topic: string; parentId: string | null }> = ({
   const commentsQuery = useComments({ topic, parentId });
 
   return (
-    <div
-      style={{
-        color: mode === "dark" ? "#fff" : "#000",
-        backgroundColor: mode === "dark" ? "#333" : "#eee",
-      }}
-    >
+    <div className="">
       {commentsQuery.isLoading && <p>Loading...</p>}
       {commentsQuery.data &&
         commentsQuery.data.map((comment) => (
-          <Comment key={comment.id} id={comment.id} />
+          <div className="mb-4">
+            <Comment key={comment.id} id={comment.id} />
+          </div>
         ))}
     </div>
   );
