@@ -1,5 +1,5 @@
 import { SupabaseClient } from "@supabase/supabase-js";
-import { Comment, DisplayUser } from "./types";
+import { Comment, DisplayUser } from "@/types";
 
 export interface GetCommentsOptions {
   topic: string;

@@ -1,6 +1,6 @@
 import { useMemo } from "react";
-import { createApiClient } from "../api";
-import { useSupabaseClient } from "../contexts";
+import { createApiClient } from "@/lib/api";
+import { useSupabaseClient } from "@/lib/contexts";
 
 const useApi = () => {
   const supabase = useSupabaseClient();

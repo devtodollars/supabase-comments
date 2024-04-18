@@ -1,5 +1,5 @@
 import { SupabaseClient } from "@supabase/supabase-js";
-import { DisplayUser } from "./types";
+import { DisplayUser } from "@/types";
 import { createContext, useContext } from "react";
 
 // Creating the context object

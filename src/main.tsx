@@ -1,7 +1,7 @@
 import { createClient } from "@supabase/supabase-js";
-import Comments from "./components/Comments";
-import CommentsProvider from "./components/CommentsProvider";
-import ReplyEditor from "./components/ReplyEditor";
+import Comments from "@/components/Comments";
+import CommentsProvider from "@/components/CommentsProvider";
+import ReplyEditor from "@/components/ReplyEditor";
 import React from "react";
 import ReactDOM from "react-dom/client";
 

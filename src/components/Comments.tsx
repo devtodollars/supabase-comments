@@ -1,8 +1,7 @@
 import React from "react";
-import { useCommentsContext } from "../contexts";
-import Comment from "./Comment";
-import useComments from "../hooks/useComments";
-import ReplyEditor from "./ReplyEditor";
+import { useCommentsContext } from "@/lib/contexts";
+import Comment from "@/components/Comment";
+import useComments from "@/hooks/useComments";
 
 export const Comments: React.FC<{ topic: string; parentId: string | null }> = ({
   topic,

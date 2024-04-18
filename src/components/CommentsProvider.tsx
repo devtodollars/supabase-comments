@@ -1,7 +1,7 @@
-import { FC, ReactNode, useEffect, useMemo } from "react";
+import { FC, ReactNode, useMemo } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { DisplayUser } from "../types";
-import { CommentsContext, SupabaseClientContext } from "../contexts";
+import { DisplayUser } from "@/types";
+import { CommentsContext, SupabaseClientContext } from "@/lib/contexts";
 import { SupabaseClient } from "@supabase/supabase-js";
 
 const defaultQueryClient = new QueryClient();

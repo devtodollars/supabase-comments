@@ -1,5 +1,5 @@
 import { useQuery, useQueryClient } from "@tanstack/react-query";
-import useApi from "./useApi";
+import useApi from "@/hooks/useApi";
 
 interface UseCommentsQuery {
   topic: string;

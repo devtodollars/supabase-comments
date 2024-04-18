@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import useComment from "../hooks/useComment";
-import { Comments } from "./Comments";
-import useAddComment from "../hooks/useAddComment";
-import useAuth from "../hooks/useAuth";
-import AuthDialog from "./AuthDialog";
-import ReplyEditor from "./ReplyEditor";
+import useComment from "@/hooks/useComment";
+import { Comments } from "@/components/Comments";
+import useAddComment from "@/hooks/useAddComment";
+import useAuth from "@/hooks/useAuth";
+import AuthDialog from "@/components/AuthDialog";
+import ReplyEditor from "@/components/ReplyEditor";
 
 const Comment: React.FC<{ id: string }> = ({ id }) => {
   const { data: comment, isLoading } = useComment({ id });

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import useAddComment from "../hooks/useAddComment";
-import useAuth from "../hooks/useAuth";
+import useAddComment from "@/hooks/useAddComment";
+import useAuth from "@/hooks/useAuth";
 
 interface ReplyEditorProps {
   parentId: string | null;

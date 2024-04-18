@@ -1,5 +1,5 @@
 import { Auth } from "@supabase/auth-ui-react";
-import { useSupabaseClient } from "../contexts";
+import { useSupabaseClient } from "@/lib/contexts";
 
 interface AuthDialogProps {
   isOpen: boolean;

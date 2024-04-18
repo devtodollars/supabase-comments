@@ -1,5 +1,5 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import useApi from "./useApi";
+import useApi from "@/hooks/useApi";
 
 interface UseAddCommentPayload {
   comment: string;

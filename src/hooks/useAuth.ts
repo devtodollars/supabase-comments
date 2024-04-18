@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useSupabaseClient } from "../contexts";
+import { useSupabaseClient } from "@/lib/contexts";
 import { User } from "@supabase/supabase-js";
 
 export default function useAuth() {
