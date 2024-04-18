@@ -3,23 +3,18 @@ import useComment from "@/hooks/useComment";
 import { Comments } from "@/components/Comments";
 import useAddComment from "@/hooks/useAddComment";
 import useAuth from "@/hooks/useAuth";
-import AuthDialog from "@/components/AuthDialog";
 import ReplyEditor from "@/components/ReplyEditor";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { useCommentsContext } from "@/lib/contexts";
 
 const Comment: React.FC<{ id: string }> = ({ id }) => {
   const { data: comment, isLoading } = useComment({ id });
-  const addCommentMutation = useAddComment();
   const { user } = useAuth();
+  const { setShowAuthDialog } = useCommentsContext();
+  const addCommentMutation = useAddComment();
   const [showReplies, setShowReplies] = useState(false);
   const [showReplyEditor, setShowReplyEditor] = useState(false);
-  const [showAuthDialog, setShowAuthDialog] = useState(false);
-
-  // close auth dialog if logged in
-  useEffect(() => {
-    if (user) setShowAuthDialog(false);
-  }, [user]);
 
   // show replies after comment
   useEffect(() => {
@@ -82,11 +77,10 @@ const Comment: React.FC<{ id: string }> = ({ id }) => {
                     parentId={comment.id}
                     topic={comment.topic}
                     onClose={() => setShowReplyEditor(false)}
-                    onLogout={() => setShowAuthDialog(false)}
                   />
                 )}
                 {showReplies && (
-                  <div className="pl-3 my-3 border-l-2">
+                  <div className="pl-3 my-3 border-l">
                     <Comments topic={comment.topic} parentId={comment.id} />
                   </div>
                 )}
@@ -95,10 +89,6 @@ const Comment: React.FC<{ id: string }> = ({ id }) => {
           </div>
         </div>
       )}
-      <AuthDialog
-        isOpen={showAuthDialog}
-        onClose={() => setShowAuthDialog(false)}
-      />
     </div>
   );
 };

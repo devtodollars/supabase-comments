@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
-import { useSupabaseClient } from "@/lib/contexts";
+import { useCommentsContext, useSupabaseClient } from "@/lib/contexts";
 import { User } from "@supabase/supabase-js";
 
 export default function useAuth() {
   const supabase = useSupabaseClient();
+  const { setShowAuthDialog } = useCommentsContext();
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -14,7 +15,11 @@ export default function useAuth() {
     // Subscribe to auth state changes
     const { data: subscription } = supabase.auth.onAuthStateChange(
       (_, session) => {
-        setUser(session?.user ?? null);
+        const user = session?.user ?? null;
+        setUser(user);
+        if (user) {
+          setShowAuthDialog(false);
+        }
         setLoading(false); // Set loading to false upon receiving an event
       },
     );

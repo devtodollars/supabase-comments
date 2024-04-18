@@ -1,8 +1,9 @@
-import { FC, ReactNode, useMemo } from "react";
+import { FC, ReactNode, useEffect, useMemo, useState } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { DisplayUser } from "@/types";
-import { CommentsContext, SupabaseClientContext } from "@/lib/contexts";
 import { SupabaseClient } from "@supabase/supabase-js";
+import { CommentsContext, SupabaseClientContext } from "@/lib/contexts";
+import AuthDialog from "@/components/AuthDialog";
 
 const defaultQueryClient = new QueryClient();
 
@@ -19,17 +20,16 @@ const CommentsProvider: FC<CommentsProviderProps> = ({
   supabaseClient,
   queryClient = defaultQueryClient,
   children,
-  onAuthRequested,
-  onUserClick,
   mode,
 }) => {
+  const [showAuthDialog, setShowAuthDialog] = useState(false);
   const context = useMemo(
     () => ({
-      onAuthRequested,
-      onUserClick,
+      showAuthDialog,
+      setShowAuthDialog,
       mode,
     }),
-    [onAuthRequested, onUserClick, mode],
+    [showAuthDialog, setShowAuthDialog, mode],
   );
 
   return (
@@ -37,6 +37,10 @@ const CommentsProvider: FC<CommentsProviderProps> = ({
       <SupabaseClientContext.Provider value={supabaseClient}>
         <CommentsContext.Provider value={context}>
           {children}
+          <AuthDialog
+            isOpen={showAuthDialog}
+            onClose={() => setShowAuthDialog(false)}
+          />
         </CommentsContext.Provider>
       </SupabaseClientContext.Provider>
     </QueryClientProvider>

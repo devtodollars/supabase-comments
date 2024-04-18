@@ -1,11 +1,10 @@
 import { SupabaseClient } from "@supabase/supabase-js";
-import { DisplayUser } from "@/types";
 import { createContext, useContext } from "react";
 
 // Creating the context object
 export interface CommentsContextApi {
-  onAuthRequested?: () => void;
-  onUserClick?: (user: DisplayUser) => void;
+  showAuthDialog: boolean;
+  setShowAuthDialog: (value: boolean) => void;
   mode?: "light" | "dark";
 }
 export const CommentsContext = createContext<CommentsContextApi | null>(null);
