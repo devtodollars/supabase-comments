@@ -30,9 +30,9 @@
     "format:styles": "stylelint ./**/*.{css,scss} --fix"
   },
   "peerDependencies": {
-    "@supabase/supabase-js": "^2.0.0",
     "@supabase/auth-ui-react": "^0.4.0",
     "@supabase/auth-ui-shared": "^0.1.0",
+    "@supabase/supabase-js": "^2.0.0",
     "@tanstack/react-query": "^5.0.0",
     "react": "^17.0.0 || ^18.0.0",
     "react-dom": "^17.0.0 || ^18.0.0"
@@ -44,14 +44,17 @@
     "@typescript-eslint/eslint-plugin": "^7.1.0",
     "@typescript-eslint/parser": "^7.1.0",
     "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.4.19",
     "dts-bundle-generator": "^9.3.1",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.1.3",
+    "postcss": "^8.4.38",
     "prettier": "^3.2.5",
     "stylelint": "^16.2.1",
     "stylelint-config-recommended": "^14.0.0",
     "stylelint-config-sass-guidelines": "^11.0.0",
+    "tailwindcss": "^3.4.3",
     "tslib": "^2.6.2",
     "typescript": "^5.3.3",
     "vite": "^5.1.4",
