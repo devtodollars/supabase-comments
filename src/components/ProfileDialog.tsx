@@ -39,10 +39,6 @@ export function ProfileDialog() {
     <Dialog>
       <DialogTrigger asChild>
         <div className="flex gap-3">
-          <Avatar>
-            <AvatarImage src={displayUser?.avatar} alt="User avatar" />
-            <AvatarFallback>🙂</AvatarFallback>
-          </Avatar>
           <Button variant="link" className="p-0">
             See Profile
           </Button>
@@ -56,6 +52,12 @@ export function ProfileDialog() {
           </DialogDescription>
         </DialogHeader>
         <div className="grid gap-4 py-4">
+          <div className="flex justify-center">
+            <Avatar>
+              <AvatarImage src={displayUser?.avatar} alt="User avatar" />
+              <AvatarFallback>🙂</AvatarFallback>
+            </Avatar>
+          </div>
           <div className="grid grid-cols-4 items-center gap-4">
             <Label htmlFor="email" className="text-right">
               Email
