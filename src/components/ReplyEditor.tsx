@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import useAddComment from "@/hooks/useAddComment";
 import useAuth from "@/hooks/useAuth";
 import { useCommentsContext } from "@/lib/contexts";
+import ProfileDialog from "@/components/ProfileDialog";
 
 interface ReplyEditorProps {
   parentId: string | null;
@@ -49,7 +50,9 @@ const ReplyEditor: React.FC<ReplyEditorProps> = ({
         onChange={handleReplyChange}
         placeholder="Write a comment..."
       />
-      <div className="flex items-center justify-end mt-2">
+      <div className="flex items-center justify-between mt-2 mb-8">
+        {user && <ProfileDialog />}
+        <div className="flex-grow"></div>
         <Button
           onClick={submitReply}
           disabled={replyText === "" && user !== null}

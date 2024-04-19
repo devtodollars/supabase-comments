@@ -39,15 +39,12 @@ const Comment: React.FC<{ id: string }> = ({ id }) => {
         <div key={comment.id}>
           <div className="flex">
             <Avatar>
-              <AvatarImage
-                src="https://github.com/shadcn.png"
-                alt="User avatar"
-              />
-              <AvatarFallback>CN</AvatarFallback>
+              <AvatarImage src={comment.user.avatar} alt="User avatar" />
+              <AvatarFallback>🙂</AvatarFallback>
             </Avatar>
             <div className="pl-2 w-full">
               <div className="flex items-center gap-1 h-10">
-                <div className="font-semibold">{comment.user.name}</div>
+                <div className="font-semibold">{comment.user.name || "Anonymous"}</div>
                 <p className="text-xs text-muted-foreground">•</p>
                 <p className="text-xs text-muted-foreground">
                   {comment.created_at}

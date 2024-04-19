@@ -4,7 +4,6 @@ import CommentsProvider from "@/components/CommentsProvider";
 import ReplyEditor from "@/components/ReplyEditor";
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Profile from "./components/Profile";
 
 const SUPABASE_URL = "http://localhost:54321";
 const SUPABASE_ANON_KEY =
@@ -16,7 +15,6 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
     <CommentsProvider supabaseClient={supabase}>
       <div className="flex flex-col items-center justify-start min-h-screen">
         <div className="w-full max-w-2xl">
-          <Profile />
           <ReplyEditor topic="Single Topic" parentId={null} />
           <Comments topic="Single Topic" parentId={null} />
         </div>
