@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from "react";
 import useComment from "@/hooks/useComment";
 import { Comments } from "@/components/Comments";
 import useAddComment from "@/hooks/useAddComment";
@@ -6,7 +5,9 @@ import useAuth from "@/hooks/useAuth";
 import ReplyEditor from "@/components/ReplyEditor";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import CommentSkeleton from "@/components/CommentSkeleton";
 import { useCommentsContext } from "@/lib/contexts";
+import React, { useEffect, useState } from "react";
 
 const Comment: React.FC<{ id: string }> = ({ id }) => {
   const { data: comment, isLoading } = useComment({ id });
@@ -33,7 +34,7 @@ const Comment: React.FC<{ id: string }> = ({ id }) => {
 
   return (
     <div>
-      {isLoading && <p>Loading...</p>}
+      {isLoading && <CommentSkeleton />}
       {comment && (
         <div key={comment.id}>
           <div className="flex">

@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import useAddComment from "@/hooks/useAddComment";
+import useAuth from "@/hooks/useAuth";
+import { useCommentsContext } from "@/lib/contexts";
 
 interface ReplyEditorProps {
   parentId: string | null;
@@ -16,12 +18,18 @@ const ReplyEditor: React.FC<ReplyEditorProps> = ({
 }) => {
   const [replyText, setReplyText] = useState<string>("");
   const addCommentMutation = useAddComment();
+  const { setShowAuthDialog } = useCommentsContext();
+  const { user } = useAuth();
 
   const handleReplyChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setReplyText(e.target.value);
   };
 
   const submitReply = () => {
+    if (!user) {
+      setShowAuthDialog(true);
+      return;
+    }
     console.log("Submitting reply:", replyText);
     addCommentMutation.mutate({
       topic: topic,
@@ -42,8 +50,11 @@ const ReplyEditor: React.FC<ReplyEditorProps> = ({
         placeholder="Write a comment..."
       />
       <div className="flex items-center justify-end mt-2">
-        <Button onClick={submitReply} disabled={replyText === ""}>
-          Comment
+        <Button
+          onClick={submitReply}
+          disabled={replyText === "" && user !== null}
+        >
+          {user ? "Comment" : "Login to comment"}
         </Button>
       </div>
     </div>

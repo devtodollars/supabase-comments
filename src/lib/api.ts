@@ -29,7 +29,6 @@ export const createApiClient = (supabase: SupabaseClient) => {
       query.is("parent_id", null);
     }
     const response = await query;
-    // assertResponseOk(response); // TODO: Potentially add this;
     return response.data as Comment[];
   }
 
@@ -41,7 +40,6 @@ export const createApiClient = (supabase: SupabaseClient) => {
       .single();
 
     const response = await query;
-    // assertResponseOk(response); // TODO: potentially add this
     return response.data as Comment;
   }
 
@@ -72,7 +70,6 @@ export const createApiClient = (supabase: SupabaseClient) => {
       .single();
 
     const response = await query;
-    // assertResponseOk(response); // TODO: potenntially add this
     return response.data as DisplayUser;
   }
   return { getComment, getComments, getUser, addComment };

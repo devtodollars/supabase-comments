@@ -2,6 +2,7 @@ import React from "react";
 import { useCommentsContext } from "@/lib/contexts";
 import Comment from "@/components/Comment";
 import useComments from "@/hooks/useComments";
+import CommentSkeleton from "@/components/CommentSkeleton";
 
 export const Comments: React.FC<{ topic: string; parentId: string | null }> = ({
   topic,
@@ -11,8 +12,8 @@ export const Comments: React.FC<{ topic: string; parentId: string | null }> = ({
   const commentsQuery = useComments({ topic, parentId });
 
   return (
-    <div className="">
-      {commentsQuery.isLoading && <p>Loading...</p>}
+    <div >
+      {commentsQuery.isLoading && <CommentSkeleton />}
       {commentsQuery.data &&
         commentsQuery.data.map((comment) => (
           <div className="mb-4">

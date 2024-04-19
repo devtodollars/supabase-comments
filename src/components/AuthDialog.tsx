@@ -22,7 +22,7 @@ const AuthDialog: React.FC<AuthDialogProps> = ({ isOpen, onClose }) => {
         zIndex: 1000,
       }}
     >
-      <h2>Login to Reply</h2>
+      <h2>Login to comment</h2>
       <Auth supabaseClient={supabase} />
       <button onClick={onClose}>Close</button>
     </div>
