@@ -5,6 +5,7 @@ import ReplyEditor from "@/components/ReplyEditor";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { ThemeMinimal } from "@supabase/auth-ui-shared";
+import { Auth } from "@supabase/auth-ui-react";
 
 const SUPABASE_URL = "http://localhost:54321";
 const SUPABASE_ANON_KEY =
