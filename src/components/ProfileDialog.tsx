@@ -15,7 +15,7 @@ import useAuth from "@/hooks/useAuth";
 import { useState } from "react";
 
 export function ProfileDialog() {
-  const { displayUser, logout, updateDisplayUser } = useAuth();
+  const { user, displayUser, logout, updateDisplayUser } = useAuth();
   const [name, setName] = useState("");
   const [avatar, setAvatar] = useState("");
   const handleSave = async () => {
@@ -41,6 +41,17 @@ export function ProfileDialog() {
           </DialogDescription>
         </DialogHeader>
         <div className="grid gap-4 py-4">
+          <div className="grid grid-cols-4 items-center gap-4">
+            <Label htmlFor="email" className="text-right">
+              Email
+            </Label>
+            <Input
+              id="email"
+              value={user?.email}
+              disabled
+              className="col-span-3"
+            />
+          </div>
           <div className="grid grid-cols-4 items-center gap-4">
             <Label htmlFor="name" className="text-right">
               Name
