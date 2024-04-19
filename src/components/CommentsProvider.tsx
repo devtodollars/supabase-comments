@@ -14,12 +14,14 @@ export interface CommentsProviderProps {
   onUserClick?: (user: DisplayUser) => void;
   mode?: "light" | "dark";
   children: ReactNode;
+  authComponent?: ReactNode;
 }
 
 const CommentsProvider: FC<CommentsProviderProps> = ({
   supabaseClient,
   queryClient = defaultQueryClient,
   children,
+  authComponent,
   mode,
 }) => {
   const [showAuthDialog, setShowAuthDialog] = useState(false);
@@ -37,7 +39,9 @@ const CommentsProvider: FC<CommentsProviderProps> = ({
       <SupabaseClientContext.Provider value={supabaseClient}>
         <CommentsContext.Provider value={context}>
           {children}
-          <AuthDialog open={showAuthDialog} setOpen={setShowAuthDialog} />
+          <AuthDialog open={showAuthDialog} setOpen={setShowAuthDialog}>
+            {authComponent}
+          </AuthDialog>
         </CommentsContext.Provider>
       </SupabaseClientContext.Provider>
     </QueryClientProvider>
