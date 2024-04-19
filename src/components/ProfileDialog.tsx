@@ -9,15 +9,24 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import useAuth from "@/hooks/useAuth";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export function ProfileDialog() {
   const { user, displayUser, logout, updateDisplayUser } = useAuth();
   const [name, setName] = useState("");
   const [avatar, setAvatar] = useState("");
+
+  useEffect(() => {
+    if (displayUser) {
+      setName(displayUser.name || "");
+      setAvatar(displayUser.avatar || "");
+    }
+  }, [displayUser]);
+
   const handleSave = async () => {
     if (displayUser == null) return;
     await updateDisplayUser({
@@ -29,9 +38,15 @@ export function ProfileDialog() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="link" className="p-0">
-          See Profile
-        </Button>
+        <div className="flex gap-3">
+          <Avatar>
+            <AvatarImage src={displayUser?.avatar} alt="User avatar" />
+            <AvatarFallback>🙂</AvatarFallback>
+          </Avatar>
+          <Button variant="link" className="p-0">
+            See Profile
+          </Button>
+        </div>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
@@ -58,7 +73,7 @@ export function ProfileDialog() {
             </Label>
             <Input
               id="name"
-              defaultValue={displayUser?.name}
+              value={name}
               onChange={(e) => setName(e.target.value)}
               className="col-span-3"
             />
@@ -69,7 +84,7 @@ export function ProfileDialog() {
             </Label>
             <Input
               id="username"
-              defaultValue={displayUser?.avatar}
+              value={avatar}
               onChange={(e) => setAvatar(e.target.value)}
               className="col-span-3"
             />
