@@ -8,6 +8,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import CommentSkeleton from "@/components/CommentSkeleton";
 import { useCommentsContext } from "@/lib/contexts";
 import React, { useEffect, useState } from "react";
+import { getRelativeTime } from "@/lib/utils";
 
 const Comment: React.FC<{ id: string }> = ({ id }) => {
   const { data: comment, isLoading } = useComment({ id });
@@ -49,7 +50,7 @@ const Comment: React.FC<{ id: string }> = ({ id }) => {
                 </div>
                 <p className="text-xs text-muted-foreground">•</p>
                 <p className="text-xs text-muted-foreground">
-                  {comment.created_at}
+                  {getRelativeTime(new Date(comment.created_at))}
                 </p>
               </div>
               <div className="pt-1">
