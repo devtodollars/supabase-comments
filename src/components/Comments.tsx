@@ -16,8 +16,8 @@ export const Comments: React.FC<{ topic: string; parentId: string | null }> = ({
       {commentsQuery.isLoading && <CommentSkeleton />}
       {commentsQuery.data &&
         commentsQuery.data.map((comment) => (
-          <div className="mb-4">
-            <Comment key={comment.id} id={comment.id} />
+          <div key={comment.id} className="mb-4">
+            <Comment id={comment.id} />
           </div>
         ))}
     </div>

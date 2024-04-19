@@ -1,4 +1,4 @@
-import { FC, ReactNode, useEffect, useMemo, useState } from "react";
+import { FC, ReactNode, useMemo, useState } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { DisplayUser } from "@/types";
 import { SupabaseClient } from "@supabase/supabase-js";
@@ -37,10 +37,7 @@ const CommentsProvider: FC<CommentsProviderProps> = ({
       <SupabaseClientContext.Provider value={supabaseClient}>
         <CommentsContext.Provider value={context}>
           {children}
-          <AuthDialog
-            isOpen={showAuthDialog}
-            onClose={() => setShowAuthDialog(false)}
-          />
+          <AuthDialog open={showAuthDialog} setOpen={setShowAuthDialog} />
         </CommentsContext.Provider>
       </SupabaseClientContext.Provider>
     </QueryClientProvider>

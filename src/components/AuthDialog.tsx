@@ -1,31 +1,31 @@
 import { Auth } from "@supabase/auth-ui-react";
 import { useSupabaseClient } from "@/lib/contexts";
 
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import { ThemeMinimal } from "@supabase/auth-ui-shared";
+
 interface AuthDialogProps {
-  isOpen: boolean;
-  onClose: () => void;
+  open: boolean;
+  setOpen: (val: boolean) => void;
 }
 
-const AuthDialog: React.FC<AuthDialogProps> = ({ isOpen, onClose }) => {
+const AuthDialog: React.FC<AuthDialogProps> = ({ open, setOpen }) => {
   const supabase = useSupabaseClient();
-  if (!isOpen) return null;
-
   return (
-    <div
-      style={{
-        position: "fixed",
-        top: "40%",
-        left: "50%",
-        transform: "translate(-50%, -50%)",
-        backgroundColor: "white",
-        padding: "20px",
-        zIndex: 1000,
-      }}
-    >
-      <h2>Login to comment</h2>
-      <Auth supabaseClient={supabase} />
-      <button onClick={onClose}>Close</button>
-    </div>
+    <Dialog open={open} onOpenChange={setOpen}>
+      <DialogContent>
+        <DialogHeader>
+          <DialogTitle>Login to comment</DialogTitle>
+        </DialogHeader>
+        <Auth supabaseClient={supabase} appearance={{ theme: ThemeMinimal }} />
+      </DialogContent>
+    </Dialog>
   );
 };
 
