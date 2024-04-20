@@ -1,5 +1,12 @@
 # Vite TypeScript NPM Package
 
+## Instaillation
+
+```
+npm install @supabase/supabase-js @supabase/auth-ui-shared @supabase/auth-ui-react @tanstack/react-query
+```
+
+
 Scaffold TypeScript npm packages using this template to bootstrap your next library.
 
 > [!TIP]
@@ -80,7 +87,7 @@ For UI projects, you may want to consider adding tools such as [Storybook](https
 
 To use this library with other app projects before submitting to a registry such as NPM, run the `dev` script and link packages.
 
-Using the `dev` task, Vite detects changes and compiles all modules to the `dist/` folder, as well as rollup of all types to a d.ts declaration file.  
+Using the `dev` task, Vite detects changes and compiles all modules to the `dist/` folder, as well as rollup of all types to a d.ts declaration file.
 
 To test your library from within an app:
 
@@ -221,6 +228,6 @@ package.json:
   },
 ```
 
-For more information, see: 
+For more information, see:
 - [Using secrets in GitHub Actions](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions)
 - [Publish to npmjs and GPR with npm](https://github.com/actions/setup-node/blob/main/docs/advanced-usage.md#publish-to-npmjs-and-gpr-with-npm)
