@@ -1,5 +1,5 @@
 {
-  "name": "supabase-comments",
+  "name": "@devtodollars/supabase-comments",
   "version": "0.0.1",
   "description": "A React library for integrating Supabase powered comments into your applications",
   "author": "Matthew Wong <matt@devtodollars.com>",
