@@ -29,6 +29,7 @@ PROJECT_ROOT=$(git rev-parse --show-toplevel)
 
 # Path to the manifest.json file
 PACKAGEJSONPATH="$PROJECT_ROOT/package.json"
+PACKAGELOCKPATH="$PROJECT_ROOT/package-lock.json"
 
 # Check if manifest.json exists
 if [ ! -f "$PACKAGEJSONPATH" ]; then
@@ -39,8 +40,11 @@ fi
 # Update the version in manifest.json
 sed -i '' 's|\(.*"version"\): "\(.*\)",.*|\1: '"\"$VERSION\",|" $PACKAGEJSONPATH
 
+# Update package-lock.json
+npm install
+
 # Commit the changes (optional)
-git add "$PACKAGEJSONPATH"
+git add "$PACKAGEJSONPATH" "$PACKAGELOCKPATH"
 git commit -m "Update version to $VERSION" $PACKAGEJSONPATH
 
 # git push changes
@@ -48,4 +52,4 @@ git push
 git tag $VERSION
 git push origin refs/tags/$VERSION
 
-echo "Version updated to $VERSION in manifest.json and ran build command"
+echo "Version updated to $VERSION in package.json and ran build command"
