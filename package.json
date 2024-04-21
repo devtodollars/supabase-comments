@@ -1,6 +1,6 @@
 {
   "name": "supabase-comments",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A React library for integrating Supabase powered comments into your applications",
   "author": "Matthew Wong <matt@devtodollars.com>",
   "homepage": "https://github.com/devtodollars/supabase-comments",
