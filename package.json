@@ -83,5 +83,8 @@
     "lucide-react": "^0.371.0",
     "tailwind-merge": "^2.2.2",
     "tailwindcss-animate": "^1.0.7"
+  },
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "4.9.5"
   }
 }
