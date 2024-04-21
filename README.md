@@ -1,6 +1,6 @@
 # Vite TypeScript NPM Package
 
-## Instaillation
+## Installation
 
 ```
 npm install @supabase/supabase-js @supabase/auth-ui-shared @supabase/auth-ui-react @tanstack/react-query
