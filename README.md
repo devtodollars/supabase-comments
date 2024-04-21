@@ -3,6 +3,8 @@ A React library for integrating Supabase powered comments into your applications
 - Demo: https://supabase-comments.netlify.app
 <img width="939" alt="Screenshot 2024-04-21 at 10 30 31 AM" src="https://github.com/devtodollars/supabase-comments/assets/20890995/1f485677-1774-431e-913d-7c1b9c48cfab">
 
+https://github.com/devtodollars/supabase-comments/assets/20890995/be175c42-fcad-4e2d-866a-3ebff4a3297b
+
 ## Features
 - Configurable and beautiful shadecn/ui
 - Built in light and dark modes
