@@ -40,7 +40,7 @@ export function ProfileDialog() {
       <DialogTrigger asChild>
         <div className="flex gap-3">
           <Button variant="link" className="p-0">
-            See Profile
+            View Profile
           </Button>
         </div>
       </DialogTrigger>
