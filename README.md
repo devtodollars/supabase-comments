@@ -45,13 +45,19 @@ import supabase-comments/style.css
 import "./shadecn-theme.css"
 ```
 
-
 ## Upcoming Features
 - Add `onAuthenticate` function to give option for custom Authentication
 - Edit / delete comments
 - Add comment reactions
 - Markdown editing options (e.g. bold, italic, etc.)
 
-
 ## API
+```
+export interface CommentsSectionProps {
+  supabaseClient: SupabaseClient; // supabaase client
+  topic: string; // the topic or thread
+  authComponent?: ReactNode; // the auth component within the dialog
+  mode: "light" | "dark"; // light or dark mode
+}
+```
 
