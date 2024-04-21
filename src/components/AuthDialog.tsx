@@ -1,5 +1,5 @@
 import { Auth } from "@supabase/auth-ui-react";
-import { useSupabaseClient } from "@/lib/contexts";
+import { useCommentsContext, useSupabaseClient } from "@/lib/contexts";
 import {
   Dialog,
   DialogContent,
@@ -17,14 +17,21 @@ interface AuthDialogProps {
 
 const AuthDialog: React.FC<AuthDialogProps> = ({ open, setOpen, children }) => {
   const supabase = useSupabaseClient();
+  const commentsContext = useCommentsContext();
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogContent>
         <DialogHeader>
           <DialogTitle>Login to comment</DialogTitle>
         </DialogHeader>
-        {children ? children : (
-          <Auth supabaseClient={supabase} appearance={{ theme: ThemeMinimal }} />
+        {children ? (
+          children
+        ) : (
+          <Auth
+            supabaseClient={supabase}
+            appearance={{ theme: ThemeMinimal }}
+            theme={commentsContext.mode === "dark" ? "dark" : "default"}
+          />
         )}
       </DialogContent>
     </Dialog>

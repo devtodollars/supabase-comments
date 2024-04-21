@@ -15,6 +15,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
     <CommentsSection
       topic="Single Topic"
       supabaseClient={supabase}
+      mode="dark"
       authComponent={
         <Auth supabaseClient={supabase} appearance={{ theme: ThemeMinimal }} />
       }
