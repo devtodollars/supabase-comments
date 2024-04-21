@@ -5,7 +5,8 @@ A React library for integrating Supabase powered comments into your applications
 
 
 ## Features
-- Configurable and beautiful ShadeCN UI
+- Configurable and beautiful shadecn/ui
+- Built in light and dark modes
 - Nested Comments
 - Uses Supabase Authentication
 
