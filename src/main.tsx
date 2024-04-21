@@ -1,8 +1,6 @@
 import { createClient } from "@supabase/supabase-js";
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { ThemeMinimal } from "@supabase/auth-ui-shared";
-import { Auth } from "@supabase/auth-ui-react";
 import CommentsSection from "@/components/CommentsSection";
 
 const SUPABASE_URL = "http://localhost:54321";
@@ -16,9 +14,6 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
       topic="Single Topic"
       supabaseClient={supabase}
       mode="dark"
-      authComponent={
-        <Auth supabaseClient={supabase} appearance={{ theme: ThemeMinimal }} />
-      }
     />
   </React.StrictMode>,
 );

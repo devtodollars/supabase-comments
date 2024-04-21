@@ -16,8 +16,6 @@ npm install --save @supabase/supabase-js @supabase/auth-ui-shared @supabase/auth
 4. Add imports and initialize supabase client
 ```
 import { createClient } from "@supabase/supabase-js";
-import { ThemeMinimal } from "@supabase/auth-ui-shared";
-import { Auth } from "@supabase/auth-ui-react";
 import { CommentsSection } from "supabase-comments";
 import "supabase-comments/style.css";
 
@@ -28,11 +26,8 @@ const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 4. Add the `CommentsSection` into your react app.
 ```
 <CommentsSection
-  topic="Single Topic"
+  topic="supabase-comments-demo-topic"
   supabaseClient={supabase}
-  authComponent={
-    <Auth supabaseClient={supabase} appearance={{ theme: ThemeMinimal }} />
-  }
 />
 ```
 

@@ -6,7 +6,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { ThemeMinimal } from "@supabase/auth-ui-shared";
+import { ThemeSupa } from "@supabase/auth-ui-shared";
 import { ReactNode } from "react";
 
 interface AuthDialogProps {
@@ -29,8 +29,9 @@ const AuthDialog: React.FC<AuthDialogProps> = ({ open, setOpen, children }) => {
         ) : (
           <Auth
             supabaseClient={supabase}
-            appearance={{ theme: ThemeMinimal }}
-            theme={commentsContext.mode === "dark" ? "dark" : "default"}
+            appearance={{ theme: ThemeSupa }}
+            theme={commentsContext.mode === "dark" ? "dark" : undefined}
+            providers={[]}
           />
         )}
       </DialogContent>
