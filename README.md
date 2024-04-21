@@ -55,7 +55,7 @@ export interface CommentsSectionProps {
   supabaseClient: SupabaseClient; // supabaase client
   topic: string; // the topic or thread
   authComponent?: ReactNode; // the auth component within the dialog
-  mode: "light" | "dark"; // light or dark mode
+  mode?: "light" | "dark"; // light or dark mode
 }
 ```
 
