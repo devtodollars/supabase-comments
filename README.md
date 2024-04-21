@@ -1,5 +1,6 @@
 # Supabase Comments
 A React library for integrating Supabase powered comments into your applications. Inspired by [supabase-comments-extension](https://github.com/malerba118/supabase-comments-extension).
+Demo: https://supabase-comments.netlify.app
 
 ## Features
 - Configurable and beautiful ShadeCN UI
@@ -32,7 +33,7 @@ const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 ```
 
 ## Adjusting the Theme
-1. Go to the [shadecn theme generator](https://zippystarter.com/tools/shadcn-ui-theme-generator), generate a theme and copy the code.
+1. Go to the [shadecn theme generator](https://ui.shadcn.com/themes), generate a theme and copy the code.
 2. Paste the css into a file called `shadecn-theme.css`
 3. Add the import *underneath* the  `import supabase-comments/style.css`.
 ```
@@ -41,10 +42,10 @@ import "./shadecn-theme.css"
 ```
 
 ## Upcoming Features
-- Add `onAuthenticate` function to give option for custom Authentication
-- Edit / delete comments
-- Add comment reactions
-- Markdown editing options (e.g. bold, italic, etc.)
+- [ ] Add `onAuthenticate` function to give option for custom Authentication
+- [ ] Edit / delete comments
+- [ ] Add comment reactions
+- [ ] Markdown editing options (e.g. bold, italic, etc.)
 
 ## API
 ```

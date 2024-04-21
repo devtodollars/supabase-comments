@@ -13,7 +13,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
     <CommentsSection
       topic="Single Topic"
       supabaseClient={supabase}
-      mode="dark"
+      mode="light"
     />
   </React.StrictMode>,
 );
