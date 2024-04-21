@@ -1,7 +1,7 @@
 # Supabase Comments
 A React library for integrating Supabase powered comments into your applications. Inspired by [supabase-comments-extension](https://github.com/malerba118/supabase-comments-extension).
 - Demo: https://supabase-comments.netlify.app
-<img width="1266" alt="Screenshot 2024-04-21 at 10 29 03 AM" src="https://github.com/devtodollars/supabase-comments/assets/20890995/006c705f-f3e1-4be0-a71d-6c6f091f3f3c">
+<img width="939" alt="Screenshot 2024-04-21 at 10 30 31 AM" src="https://github.com/devtodollars/supabase-comments/assets/20890995/1f485677-1774-431e-913d-7c1b9c48cfab">
 
 
 ## Features
