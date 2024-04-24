@@ -1,7 +1,20 @@
 # Vite TypeScript NPM Package
 
-Scaffold TypeScript npm packages using this template to bootstrap your next library.
+## Getting started with local development
+1. Setup [supabase locally](https://supabase.com/docs/guides/cli/local-development)
+2. Start supabase local dev: `supabase start`
+2. Open local environment `npm start`
 
+## Release
+1. Run bumpversion script `bash ./bumpversion.sh --version X.X.X`
+Note: The script will release a tag, push, and release a new version of the app
+
+## Contributing
+1. fork repo
+2. submit PR
+3. have it reviewed by me
+
+# More Info
 ## Usage
 
 The following tasks are available:

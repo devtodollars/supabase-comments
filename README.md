@@ -37,10 +37,22 @@ const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 ## Adjusting the Theme
 1. Go to the [shadecn theme generator](https://ui.shadcn.com/themes), generate a theme and copy the code.
+Note: only copy the `root:` and `.dark` part. For example:
+```shadecn-theme.css
+:root {
+  --background: 0 0% 100%;
+  /* other attributes */
+}
+
+.dark {
+  --background: 0 0% 3.9%;
+  /* other attributes */
+}
+```
 2. Paste the css into a file called `shadecn-theme.css`
 3. Add the import *underneath* the  `import supabase-comments/style.css`.
 ```
-import supabase-comments/style.css
+import "supabase-comments/style.css"
 import "./shadecn-theme.css"
 ```
 
